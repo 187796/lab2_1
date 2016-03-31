@@ -21,5 +21,18 @@ public class BinarySearchTest {
 		assertThat(result.isFound(),is(false));
 	}
 	
+	@Test
+	public void isFirstElement() {
+		int[] seq = new int[]{1,2,3,4,5};
+		SearchResult result = BinarySearch.search(1, seq);
+		assertThat(result.getPosition(),is(1));
+	}
+	
+	@Test
+	public void isLastElement() {
+		int[] seq = new int[]{1,2,3,4,5};
+		SearchResult result = BinarySearch.search(5, seq);
+		assertThat(result.getPosition(),is(seq.length));
+	}
 
 }
