@@ -34,5 +34,19 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(5, seq);
 		assertThat(result.getPosition(),is(seq.length));
 	}
+	
+	@Test
+	public void isMiddleElementInOddSequence() {
+		int[] seq = new int[]{1,2,3,4,5};
+		SearchResult result = BinarySearch.search(3, seq);
+		assertThat(result.getPosition(),is(seq.length/2+1));
+	}
+	
+	@Test
+	public void noElement() {
+		int[] seq = new int[]{1,2,3,4,5};
+		SearchResult result = BinarySearch.search(6, seq);
+		assertThat(result.isFound(),is(false));
+	}
 
 }
