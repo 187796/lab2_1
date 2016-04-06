@@ -48,5 +48,21 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(6, seq);
 		assertThat(result.isFound(),is(false));
 	}
+	
+    @Test
+    public void cannotFindElementInEmptySequence() {
+        int[] seq = new int[] {};
+        SearchResult searchResult = BinarySearch.search(5, seq);
+
+        assertThat(searchResult.isFound(), is(false));
+    }
+
+    @Test
+    public void cannotFindElementInDisorderedSequence() {
+        int[] seq = new int[] {9, 4, 2, 1, 0};
+        SearchResult searchResult = BinarySearch.search(1, seq);
+
+        assertThat(searchResult.isFound(), is(false));
+    }
 
 }
