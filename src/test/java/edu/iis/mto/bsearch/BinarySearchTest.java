@@ -17,7 +17,7 @@ public class BinarySearchTest {
 	@Test
 	public void cannotFoundElementInSingleElementSequence() {
 		int[] seq = new int[]{5};
-		SearchResult result = BinarySearch.search(4, seq);
+		SearchResult result = BinarySearch.search(3, seq);
 		assertThat(result.isFound(),is(false));
 	}
 	
